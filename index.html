@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="description" content="Painel acadêmico para classificar e acompanhar notas de atividades.">
+  <title>Painel de notas | Acadêmico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Navegação principal">
+      <a class="brand" href="#" aria-label="Acadêmico, início">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 8.2 12 4l9 4.2-9 4.1-9-4.1Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M6.5 10.1v5.2c2.9 2.4 8.1 2.4 11 0v-5.2M21 8.5v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand-name">acadêmico<span>.</span></span>
+      </a>
+
+      <div class="nav-caption">ESPAÇO DO PROFESSOR</div>
+      <nav class="main-nav">
+        <a class="nav-item active" href="#inicio" aria-current="page">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.7"/></svg>
+          Painel de notas
+        </a>
+        <a class="nav-item" href="#registros">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5h12M8 12h12M8 19h12M3.5 5h.01M3.5 12h.01M3.5 19h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Registros
+          <span class="nav-count" id="nav-count">0</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <span class="help-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M9.7 9a2.4 2.4 0 1 1 4.2 1.6c-.9 1-1.9 1.2-1.9 2.7M12 16.5v.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </span>
+          <strong>Precisa de ajuda?</strong>
+          <p>As notas vão de 0 a 10 e ficam salvas neste dispositivo.</p>
+          <a href="#criterios">Ver critérios <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="profile">
+          <div class="avatar" aria-hidden="true">P</div>
+          <div class="profile-text"><strong>Professor(a)</strong><span>Área acadêmica</span></div>
+          <button class="icon-button profile-more" type="button" aria-label="Opções do perfil" title="Área do professor">•••</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="inicio">
+      <header class="topbar">
+        <div class="breadcrumb"><span>Área do professor</span><span class="crumb-separator">/</span><strong>Painel de notas</strong></div>
+        <div class="topbar-right">
+          <span class="status-pill"><span class="status-dot"></span>Período letivo ativo</span>
+          <span class="topbar-divider"></span>
+          <span class="today-label" id="today-label"></span>
+        </div>
+      </header>
+
+      <div class="page-content">
+        <section class="page-heading">
+          <div>
+            <div class="eyebrow"><span class="eyebrow-line"></span>ACOMPANHAMENTO ACADÊMICO</div>
+            <h1>Painel de notas</h1>
+            <p class="page-subtitle">Classifique resultados e acompanhe o desempenho da turma em um só lugar.</p>
+          </div>
+          <span class="term-chip"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="5.5" width="17" height="15" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M7.5 3.5v4M16.5 3.5v4M3.5 10h17" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>2º semestre · 2026</span>
+        </section>
+
+        <section class="stats-grid" aria-label="Resumo das notas">
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">Notas registradas</span><span class="stat-icon indigo"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5h12M8 12h12M8 19h12M3.5 5h.01M3.5 12h.01M3.5 19h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span></div>
+            <div class="stat-value" id="total-count">0</div><div class="stat-foot">registros confirmados</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">Média da turma</span><span class="stat-icon teal"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19h16M6 16l4-5 3 2 5-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 6h3v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            <div class="stat-value" id="average-value">—<span class="value-suffix"> / 10</span></div><div class="stat-foot" id="average-foot">aguardando registros</div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">Maior nota</span><span class="stat-icon amber"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.2 1 5.9-5.2-2.8-5.2 2.8 1-5.9-4.3-4.2 5.9-.9L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg></span></div>
+            <div class="stat-value" id="highest-value">—<span class="value-suffix"> / 10</span></div><div class="stat-foot">entre as notas registradas</div>
+          </article>
+        </section>
+
+        <div class="workspace-grid">
+          <section class="panel entry-panel" aria-labelledby="entry-title">
+            <div class="panel-heading">
+              <div>
+                <span class="section-kicker">NOVO REGISTRO</span>
+                <h2 id="entry-title">Classificar nota</h2>
+              </div>
+              <span class="step-badge">01 <span>/ 02</span></span>
+            </div>
+            <p class="panel-description">Informe o resultado da atividade para consultar a classificação.</p>
+
+            <form id="grade-form" novalidate>
+              <label class="field-label" for="grade-input">Nota do aluno</label>
+              <div class="input-wrap" id="input-wrap">
+                <input id="grade-input" name="grade" type="text" inputmode="decimal" autocomplete="off" placeholder="0,0" aria-describedby="grade-hint grade-error" maxlength="5">
+                <span class="input-suffix">/ 10</span>
+              </div>
+              <div class="field-meta"><span id="grade-hint">Use um valor entre 0 e 10</span><span>Ex.: 8,5</span></div>
+              <p class="field-error" id="grade-error" role="alert" hidden></p>
+              <button class="primary-button" type="submit">
+                Classificar e registrar
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </form>
+
+            <div class="result-card" id="result-card" aria-live="polite" hidden>
+              <div class="result-icon" id="result-icon" aria-hidden="true"></div>
+              <div class="result-copy"><span class="result-caption">CLASSIFICAÇÃO</span><strong id="result-title"></strong><span id="result-description"></span></div>
+              <span class="result-grade" id="result-grade"></span>
+            </div>
+
+            <div class="criteria-block" id="criterios">
+              <div class="criteria-title"><span>Faixas de classificação</span><span class="criteria-scale">ESCALA · 0 A 10</span></div>
+              <div class="criteria-list">
+                <div class="criteria-row"><span class="criteria-dot dot-excellent"></span><span class="criteria-name">Excelente</span><span class="criteria-range">9,0 – 10,0</span></div>
+                <div class="criteria-row"><span class="criteria-dot dot-approved"></span><span class="criteria-name">Aprovado</span><span class="criteria-range">7,0 – 8,9</span></div>
+                <div class="criteria-row"><span class="criteria-dot dot-recovery"></span><span class="criteria-name">Recuperação</span><span class="criteria-range">5,0 – 6,9</span></div>
+                <div class="criteria-row"><span class="criteria-dot dot-failed"></span><span class="criteria-name">Reprovado</span><span class="criteria-range">0 – 4,9</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel records-panel" id="registros" aria-labelledby="records-title">
+            <div class="panel-heading records-heading">
+              <div>
+                <span class="section-kicker">HISTÓRICO</span>
+                <h2 id="records-title">Notas registradas <span class="heading-count" id="heading-count">0</span></h2>
+              </div>
+              <button class="text-button" id="clear-button" type="button" disabled>Limpar lista</button>
+            </div>
+            <p class="panel-description">Resultados confirmados nesta sessão de avaliação.</p>
+            <div class="records-header"><span>NOTA</span><span>CLASSIFICAÇÃO</span><span>HORÁRIO</span></div>
+            <div class="records-list" id="records-list" aria-live="polite"></div>
+            <div class="empty-state" id="empty-state">
+              <div class="empty-illustration" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><rect x="9" y="7" width="30" height="35" rx="5" fill="#F1F3FC" stroke="#DDE2F2" stroke-width="1.5"/><path d="M17 17h14M17 23h14M17 29h8" stroke="#8B96BC" stroke-width="2" stroke-linecap="round"/><circle cx="34" cy="34" r="8" fill="#E9EAFE" stroke="white" stroke-width="2"/><path d="M34 30v8m-4-4h8" stroke="#6667D9" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+              <strong>Nenhuma nota por aqui ainda</strong>
+              <span>Classifique a primeira nota para começar seu acompanhamento.</span>
+            </div>
+            <div class="records-footer"><span id="records-summary">0 notas adicionadas</span><span>Salvo automaticamente <span class="saved-check" aria-hidden="true">✓</span></span></div>
+          </section>
+        </div>
+        <footer class="page-footer"><span>Acadêmico <span class="footer-dot">·</span> Painel de acompanhamento de notas</span><span>Seus dados ficam armazenados neste dispositivo.</span></footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
