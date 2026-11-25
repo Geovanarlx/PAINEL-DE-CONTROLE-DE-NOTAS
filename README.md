@@ -2,6 +2,12 @@
 
 Aplicação web para registrar e acompanhar notas de atividades acadêmicas. O professor informa uma nota de 0 a 10, consulta a classificação e confirma se deseja adicioná-la ao histórico. O painel atualiza a quantidade de registros, a média aritmética e a maior nota.
 
+## Acesse o sistema
+
+[**Abrir o Painel de Notas no GitHub Pages**](https://geovanarlx.github.io/PAINEL-DE-CONTROLE-DE-NOTAS/)
+
+> Para ativar a publicação deste repositório, acesse **Settings → Pages** no GitHub e, em **Build and deployment**, escolha **Deploy from a branch**. Selecione a branch `main`, a pasta `/(root)` e clique em **Save**. O site ficará disponível no endereço acima após a publicação inicial terminar.
+
 ## Tecnologias utilizadas
 
 - **HTML5**: estrutura semântica da página, campos e áreas do painel.
@@ -12,7 +18,7 @@ Aplicação web para registrar e acompanhar notas de atividades acadêmicas. O p
 
 O projeto não usa frameworks ou dependências para instalar.
 
-## Como executar
+## Como executar localmente
 
 1. Baixe ou clone este repositório.
 2. Abra a pasta no Visual Studio Code.
