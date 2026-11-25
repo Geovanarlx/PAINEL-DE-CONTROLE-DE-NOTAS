@@ -6,8 +6,6 @@ Aplicação web para registrar e acompanhar notas de atividades acadêmicas. O p
 
 [**Abrir o Painel de Notas no GitHub Pages**](https://geovanarlx.github.io/PAINEL-DE-CONTROLE-DE-NOTAS/)
 
-> Para ativar a publicação deste repositório, acesse **Settings → Pages** no GitHub e, em **Build and deployment**, escolha **Deploy from a branch**. Selecione a branch `main`, a pasta `/(root)` e clique em **Save**. O site ficará disponível no endereço acima após a publicação inicial terminar.
-
 ## Tecnologias utilizadas
 
 - **HTML5**: estrutura semântica da página, campos e áreas do painel.
